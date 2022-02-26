@@ -8,20 +8,19 @@ import { League } from './league.dto';
 export class LeagueService {
   constructor(private httpService: HttpService) {}
 
-  public getLeagueInfo(
-    year: number,
-    leagueId: number,
-  ): Observable<AxiosResponse<League>> {
+  public getLeagueInfo(year: number, leagueId: number): League {
     const espnLeagueResponse = this.httpService.get(
       `http://fantasy.espn.com/apis/v3/games/ffl/seasons/${year}/segments/0/leagues/${leagueId}?view=`,
     );
-    const leagueInfo = this.formatESPNLeagueResponse(espnLeagueResponse);
+    const leagueInfo: League =
+      this.formatESPNLeagueResponse(espnLeagueResponse);
     return leagueInfo;
   }
 
   private formatESPNLeagueResponse(
-    espnRespone: Observable<AxiosResponse<League>>,
+    espnResponse: Observable<AxiosResponse<League>>,
   ): League {
-    throw new Error('Function not implemented.');
+      let formattedESPNResponse: League;
+      return formattedESPNResponse;
   }
 }
