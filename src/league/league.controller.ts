@@ -1,11 +1,15 @@
 import { Controller, Get } from '@nestjs/common';
 import { League } from './league.dto';
+import { LeagueService } from './league.service';
 
 @Controller('league')
 export class LeagueController {
-    @Get()
-    public getLeagueInfo(): League{
-        
-        return 
-    }
+  constructor(private leagueService: LeagueService) {}
+
+  @Get()
+  public getLeagueInfo(): League {
+    //console.info(this.leagueService.getLeagueInfo(2021, 646859));
+    const league: League = this.leagueService.getLeagueInfo(2021, 646859);
+    return league;
+  }
 }
