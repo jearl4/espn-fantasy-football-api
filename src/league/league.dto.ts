@@ -14,6 +14,7 @@ export interface League {
       abbrev: string;
       location: string;
       nickname: string;
+      id: number
     },
   ];
   status: {
