@@ -47,7 +47,7 @@ export class LeagueService {
     return this.league;
   }
 
-  private mapEspnResponseToLeague(response: AxiosResponse<League, any>) {
+  private mapEspnResponseToLeague(response: AxiosResponse<League, any>):void {
     this.league.seasonId = response.data.seasonId;
     this.league.settings.name = response.data.settings.name;
     this.league.status.currentMatchupPeriod =

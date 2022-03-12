@@ -8,7 +8,6 @@ export class LeagueController {
 
   @Get()
   public getLeagueInfo(): League {
-    //console.info(this.leagueService.getLeagueInfo(2021, 646859));
     const league: League = this.leagueService.getLeagueInfo(2021, 646859);
     return league;
   }
